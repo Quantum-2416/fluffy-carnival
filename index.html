@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>PaverCraft India | Premium Paver Blocks & Landscape Solutions</title>
+  <title>D.D. ENTERPRISE | Premium Paver Blocks & Landscape Solutions</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Google Font -->
@@ -89,12 +89,24 @@
     }
 
     .logo-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      background: conic-gradient(from 220deg, var(--accent-gold), var(--accent-teal), #4f63ff, var(--accent-gold));
-      padding: 2px;
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.07);
+      width: 72px;
+      height: 72px;
+      border-radius: 50%; /* fully circular */
+      background: transparent;
+      padding: 4px;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
+      overflow: hidden; /* ensure image is clipped to circle */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* fill and crop to circle */
+      display: block;
+      border-radius: 50%;
     }
 
     .logo-inner {
@@ -132,6 +144,8 @@
       align-items: center;
       gap: 1.6rem;
       font-size: 0.9rem;
+      transform: translateX(-50px);
+      /* Shift nav links 10px to the left as requested */
     }
 
     .nav-links a {
@@ -139,6 +153,7 @@
       position: relative;
       padding-bottom: 0.1rem;
       transition: color var(--transition-fast);
+      white-space: wrap;
     }
 
     .nav-links a::after {
@@ -161,6 +176,11 @@
       width: 100%;
     }
 
+    /* Keep the About Us nav link on a single line to prevent wrapping */
+    .nav-links a[href="#gallery"] {
+      white-space: nowrap;
+    }
+
     .nav-cta {
       display: flex;
       align-items: center;
@@ -169,11 +189,15 @@
 
     .pill-badge {
       font-size: 0.74rem;
-      padding: 0.35rem 0.7rem;
+      padding: 0.2rem 1rem;
       border-radius: 999px;
       color: var(--accent-teal);
       border: 1px solid rgba(58, 209, 195, 0.28);
       background: radial-gradient(circle at top left, rgba(58, 209, 195, 0.16), transparent 60%);
+      display: inline-block;
+      width: 8.5rem; /* set a large width to allow text wrapping */
+      max-width: 10rem; /* limit width so text wraps into two lines */
+      white-space: normal; /* allow wrapping within the pill */
     }
 
     .btn-primary,
@@ -439,16 +463,21 @@
     .hero-mock-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 0.35rem;
+      gap: 0.8rem;
       margin-bottom: 0.6rem;
     }
 
     .paver-tile {
-      height: 30px;
-      border-radius: 9px;
+      height: 100px;
+      border-radius: 6px;
       background: linear-gradient(145deg, #2e394a, #171c27);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
     }
 
     .paver-tile:nth-child(2),
@@ -1091,31 +1120,30 @@
         <nav class="nav" id="nav">
           <div class="nav-left">
             <div class="logo-mark">
-              <div class="logo-inner">PC</div>
+              <img src="Brand Logo.png" alt="D.D. Enterprise Logo">
             </div>
             <div class="brand-text">
-              <h1>PaverCraft India</h1>
-              <span>Paving • Tiles • Landscapes</span>
+              <h1>D.D. ENTERPRISE</h1>
+              <span>Paver Blocks • Roof Tiles • Chequered Tiles</span>
             </div>
           </div>
 
           <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
 
           <div class="nav-links">
-            <a href="#products">Products</a>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#gallery">Gallery</a>
-            <a href="#contact">Contact</a>
+            <a href="#products">Home</a>
+            <a href="#about">Products</a>
+            <a href="#projects">Gallery</a>
+            <a href="#gallery">About Us</a>
+            <!-- <a href="#contact">Contact</a> -->
           </div>
 
           <div class="nav-cta">
-            <div class="pill-badge">Serving North India since 2002</div>
-            <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              +91 98XX-XXX-XXX
-            </button>
+            <div class="pill-badge">Serving West Bengal since 2010</div>
+            <!-- <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})"> </Button>-->
+              <button class="btn-ghost"><a href="tel:9433393977">+919433393977</a></button>
             <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-              Get a Quote <span class="icon-arrow">↗</span>
+              Get a Quote <!--<span class="icon-arrow">↗</span>-->
             </button>
           </div>
         </nav>
@@ -1146,17 +1174,17 @@
               <div class="hero-cta-row">
                 <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
                   Explore product range
-                  <span class="icon-arrow">↓</span>
+                  <!-- <span class="icon-arrow">↓</span> -->
                 </button>
-                <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+                <a href="Product Catalogue - D. D. ENTERPRISE.pdf" download class="btn-ghost">
                   Download brochure
-                </button>
+                </a>
               </div>
 
               <div class="hero-meta">
-                <span><strong>600+</strong> bulk projects delivered</span>
+                <span><strong>200+</strong> bulk projects delivered</span>
                 <span><strong>2 Lakh+ sq.ft</strong> executed sites</span>
-                <span><strong>IS:15658</strong> compliant paver blocks</span>
+                <!-- <span><strong>IS:15658</strong> compliant paver blocks</span> -->
               </div>
             </div>
 
@@ -1164,10 +1192,10 @@
             <div class="hero-card">
               <div class="hero-card-inner">
                 <div class="hero-chip-row">
-                  <div class="chip">Driveway-Grade Pavers</div>
-                  <div class="chip">Landscape Tiles</div>
-                  <div class="chip">Kerbs &amp; Edges</div>
-                  <div class="chip">Drain Covers</div>
+                  <div class="chip">Interlocking-Pavers Blocks</div>
+                  <div class="chip">Chequered Tiles</div>
+                  <!-- <div class="chip">Kerbs &amp; Edges</div> -->
+                  <div class="chip">Roof Tiles</div>
                 </div>
 
                 <div class="hero-card-main">
@@ -1184,40 +1212,37 @@
                     </div>
                     <div class="hero-stats">
                       <div class="hero-stat">
-                        <h4>22+</h4>
+                        <h4>15+</h4>
                         <span>Years in precast</span>
                       </div>
                       <div class="hero-stat">
-                        <h4>6+</h4>
+                        <h4>4+</h4>
                         <span>Thickness ranges</span>
                       </div>
                       <div class="hero-stat">
                         <h4>80+</h4>
-                        <span>Profiles &amp; finishes</span>
+                        <span>Product range</span>
                       </div>
                     </div>
                   </div>
 
                   <div class="hero-mock">
-                    <div class="hero-mock-tag">Sample layout • High-load driveway</div>
+                    <!-- <div class="hero-mock-tag">Sample layout • High-load driveway</div> -->
+                    <div class="hero-mock-tag">Sample layout</div>
                     <div class="hero-mock-block">
                       <div class="hero-mock-grid">
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
-                        <div class="paver-tile"></div>
+                        <img src="Brick Red.png" alt="Brick Red">
+                        <img src="Cheker Tile Red 36 Ball.png" alt="Cheker Tile Red 36 Ball">
+                        <img src="Cheker Tile Yellow Cross.png" alt="Cheker Tile Yellow Cross">
+                        <img src="Cosmos Grey.png" alt="Cosmos Grey">
+                        <img src="Domrup Yellow.png" alt="Domrup Yellow">
+                        <img src="Domrup Grey.png" alt="Domrup Grey">
+                        <img src="Max Red.png" alt="Max Red">
+                        <img src="ZigZag Yellow.png" alt="ZigZag Yellow">
                       </div>
                       <div class="hero-mock-footer">
-                        <span>Mix design: <strong>M40 • 80mm</strong></span>
-                        <span class="status-pill">Site ready</span>
+                        <!-- <span>Mix design: <strong>M40 • 80mm</strong></span>
+                        <span class="status-pill">Site ready</span> -->
                       </div>
                     </div>
                   </div>
@@ -1236,10 +1261,10 @@
               <span class="bar"></span>
               Product Range
             </div>
-            <p class="section-subtitle">
+            <!-- <p class="section-subtitle">
               Configure pavements for every loading and aesthetic requirement—from residential courtyards to container yards
               and airport apron zones.
-            </p>
+            </p> -->
           </div>
 
           <div class="card-grid">
@@ -1439,13 +1464,13 @@
     <div class="contact-grid">
       <div class="contact-panel">
         <h3>Request a project callback</h3>
-        <p>...</p>
+        <br>
 
         <!-- 🔴 REPLACE the old <form> here with the one below -->
         <form id="quoteForm">
           <div class="form-row">
             <div>
-              <label for="name">Full name</label>
+              <label for="name">Full name <span style="color: var(--danger);">*</span></label>
               <input id="name" type="text" placeholder="Your name" required>
             </div>
             <div>
@@ -1456,19 +1481,19 @@
 
           <div class="form-row">
             <div>
-              <label for="email">Work email</label>
+              <label for="email">Email</label>
               <input id="email" type="email" placeholder="you@company.com" required>
             </div>
             <div>
-              <label for="phone">Contact number</label>
+              <label for="phone">Contact number <span style="color: var(--danger);">*</span></label>
               <input id="phone" type="tel" placeholder="+91-XXXXXXXXXX" required>
             </div>
           </div>
 
           <div class="form-row">
             <div>
-              <label for="city">City / Project location</label>
-              <input id="city" type="text" placeholder="City, State">
+              <label for="city">City / Project location <span style="color: var(--danger);">*</span></label>
+              <input id="city" type="text" placeholder="City, State" required>
             </div>
             <div>
               <label for="type">Project type</label>
@@ -1484,8 +1509,8 @@
           </div>
 
           <div>
-            <label for="message">Requirements / notes</label>
-            <textarea id="message" placeholder="Share approximate area, load type (cars, trucks, forklifts), desired look &amp; project timelines."></textarea>
+            <label for="message">Requirements / notes <span style="color: var(--danger);">*</span></label>
+            <textarea id="message" placeholder="Share approximate area, load type (cars, trucks, forklifts), desired look &amp; project timelines." required></textarea>
           </div>
 
           <!-- ✅ CAPTCHA BLOCK STARTS HERE -->
@@ -1495,21 +1520,29 @@
               <div id="captchaBox"
                    style="
                       padding:0.55rem 0.9rem;
-                      font-size:1rem;
-                      letter-spacing:0.25rem;
-                      background:rgba(255,255,255,0.05);
-                      border:1px solid rgba(255,255,255,0.18);
-                      border-radius:12px;
+                      font-size:1.1rem;
+                      letter-spacing:0.3rem;
+                      background:linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+                      border:2px solid #999;
+                      border-radius:8px;
                       user-select:none;
-                      font-weight:600;">
+                      font-weight:700;
+                      color:#333;
+                      font-family:'Courier New', monospace;
+                      transform:skewY(-5deg);
+                      text-shadow:1px 1px 0 rgba(0,0,0,0.1);
+                      box-shadow:inset 0 1px 2px rgba(255,255,255,0.5), 0 2px 4px rgba(0,0,0,0.2);">
               </div>
               <button type="button" onclick="generateCaptcha()"
                       style="
                         padding:0.45rem 0.9rem;
                         border-radius:999px;
-                        border:1px solid rgba(255,255,255,0.18);
-                        background:rgba(255,255,255,0.05);
-                        cursor:pointer;">↻</button>
+                        border:1px solid rgba(255,255,255,0.3);
+                        background:rgba(255,255,255,0.1);
+                        cursor:pointer;
+                        color:#fff;
+                        font-size:1.2rem;
+                        transition:all 0.2s ease;">↻</button>
             </div>
 
             <input id="captchaInput"
@@ -1537,9 +1570,9 @@
             <aside class="contact-aside">
               <div class="contact-block">
                 <h4>Contact details</h4>
-                <p>Phone (Sales): <a href="tel:+9199XXXXXXX">+91-99XX XXX XXX</a></p>
+                <p>Phone (Sales): <a href="tel:9433393977">+919433393977</a></p>
                 <p>Phone (Factory): <a href="tel:+9198XXXXXXX">+91-98XX XXX XXX</a></p>
-                <p>Email: <a href="mailto:sales@pavercraft.in">sales@pavercraft.in</a></p>
+                <p>Email: <a href="mailto:sayandey@ddenterprisepaverblock.co.in">sayandey@ddenterprisepaverblock.co.in</a></p>
               </div>
 
               <div class="contact-block">
