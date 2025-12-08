@@ -91,11 +91,14 @@
     .logo-mark {
       width: 72px;
       height: 72px;
-      border-radius: 50%; /* fully circular */
+      border-radius: 0; /* not circular anymore */
       background: transparent;
       padding: 4px;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.06);
-      overflow: hidden; /* ensure image is clipped to circle */
+      box-shadow: none; /* removed outer ring/border */
+      border: none;
+      outline: none;
+      /* allow visible image edges */
+      overflow: visible;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -104,9 +107,9 @@
     .logo-mark img {
       width: 100%;
       height: 100%;
-      object-fit: cover; /* fill and crop to circle */
+      object-fit: contain; /* maintain full logo without cropping */
       display: block;
-      border-radius: 50%;
+      border-radius: 0;
     }
 
     .logo-inner {
@@ -1123,7 +1126,7 @@
               <img src="Brand Logo.png" alt="D.D. Enterprise Logo">
             </div>
             <div class="brand-text">
-              <h1>D.D. ENTERPRISE</h1>
+              <h1>D. D. ENTERPRISE</h1>
               <span>Paver Blocks • Roof Tiles • Chequered Tiles</span>
             </div>
           </div>
@@ -1158,7 +1161,7 @@
             <div>
               <div class="eyebrow">
                 <span class="eyebrow-dot"></span>
-                Premium Precast Concrete Studio
+                Premium Precast Concrete Article
               </div>
 
               <h2>
